@@ -24,7 +24,9 @@ public class UserServiceImpl implements UserService {
   public User findUserByEmail(String email) { return userRepository.findByEmail(email); }
 
   @Override
-  public User saveUser(User user) { return userRepository.save(user); }
+  public void saveUser(User user) {
+    userRepository.save(user);
+  }
 
   @Override
   public void deleteUserById(Long Id) { userRepository.deleteById(Id); }
